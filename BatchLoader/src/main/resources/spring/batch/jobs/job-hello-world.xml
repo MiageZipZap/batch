@@ -9,8 +9,8 @@
 	<import resource="../config/context.xml" />
 	<import resource="../config/database.xml" />
 
-	<bean id="report" class="com.mkyong.model.Report" scope="prototype" />
-	<bean id="itemProcessor" class="com.mkyong.CustomItemProcessor" />
+	<bean id="report" class="com.batch.model.Report" scope="prototype" />
+	<bean id="itemProcessor" class="com.batch.CustomItemProcessor" />
 
 	<batch:job id="helloWorldJob">
 		<batch:step id="step1">
@@ -24,7 +24,7 @@
 
 	<bean id="cvsFileItemReader" class="org.springframework.batch.item.file.FlatFileItemReader">
 
-		<property name="resource" value="classpath:cvs/input/report.csv" />
+		<property name="resource" value="classpath:csv/input/report.csv" />
 
 		<property name="lineMapper">
 			<bean class="org.springframework.batch.item.file.mapping.DefaultLineMapper">
